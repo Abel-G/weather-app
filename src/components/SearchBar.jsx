@@ -4,6 +4,7 @@ function SearchBar({ onSearch }) {
   const inputRef = useRef(); 
   const [location, setLocation] = useState('');
 
+  // Handles key down events in the search bar, if the Enter key is pressed the current location
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       onSearch(location);
@@ -11,6 +12,10 @@ function SearchBar({ onSearch }) {
     }
   };
 
+  /**
+   * Handles click events on the search icon, if the icon is clicked the current location
+   * is passed to the parent component and the location is cleared.
+   */
   const handleIconClick = () => {
     onSearch(location);
     setLocation(''); 
