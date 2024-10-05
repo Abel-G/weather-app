@@ -51,7 +51,14 @@ function App() {
         console.error("Error fetching weather data:", error);
       });
   };
- 
+  /**
+   * Resets the app by clearing the weather data and input field.
+   * Used to provide a "Reset" button.
+   */
+  const reset = () => {
+    setData(false); // Clear weather data
+    inputRef.current.value = ''; // Clear input field
+}
   // Memoize the background image computation to avoid unnecessary recalculations
   const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
@@ -77,6 +84,7 @@ function App() {
     <div className='app'style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <SearchBar onSearch={fetchWeatherData} />
       <WeatherCard data={data} />
+      <button className='fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-white/40 text-white py-2 px-4 rounded-full shadow-lg hover:bg-blue-600/20 focus:outline-none' onClick={reset}>Reset</button>
     </div>
   );
 }
