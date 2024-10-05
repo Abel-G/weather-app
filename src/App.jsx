@@ -14,9 +14,20 @@ const preloadImages = [clear, clouds, rain, thunderstorm, defau, Snowy, fog].for
   const img = new Image();
   img.src = src;
 });
+  /**
+   * App component that fetches weather data for a given location and displays it in a WeatherCard.
+   * It also renders a SearchBar component to allow the user to input a new location.
+   * The background image of the app depends on the current weather condition.
+*/
 function App() {
   const [data, setData] = useState({});
   
+  /**
+   * Fetches weather data from the OpenWeatherMap API for a given location.
+   * If the location is not valid, an alert is shown and nothing else is done.
+   * If the API call fails (e.g. because the API key is invalid), an error is logged to the console.
+   * If the API call succeeds, the weather data is stored in the component state and logged to the console.
+   */
   const fetchWeatherData = (location) => {
     if(!location){
       alert('Please enter correct city name');
@@ -40,10 +51,7 @@ function App() {
         console.error("Error fetching weather data:", error);
       });
   };
-  const reset = () => {
-    setData(false); // Clear weather data
-    inputRef.current.value = ''; // Clear input field
-}
+ 
   // Memoize the background image computation to avoid unnecessary recalculations
   const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
@@ -64,6 +72,7 @@ function App() {
         return `url(${defau})`;
     }
   }, [data.weather]);
+  
   return (
     <div className='app'style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <SearchBar onSearch={fetchWeatherData} />
