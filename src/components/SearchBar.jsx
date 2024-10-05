@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import search from '../assets/search.png'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 function SearchBar({ onSearch }) {
   const inputRef = useRef(); 
   const [location, setLocation] = useState('');
@@ -31,7 +32,7 @@ function SearchBar({ onSearch }) {
         <img 
           src={search}
           alt="Search"
-          className=' size-10 ml-2 brightness-0 invert'
+          className=' size-10 ml-2 brightness-0 invert cursor-pointer'
           onClick={handleIconClick} />
       </div>
     </div>

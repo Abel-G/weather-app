@@ -18,12 +18,16 @@ function App() {
   const [data, setData] = useState({});
   
   const fetchWeatherData = (location) => {
-     ;
+    if(!location){
+      alert('Please enter correct city name');
+      return;
+  }
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${import.meta.env.VITE_API_KEY}`;
 
     fetch(url)
       .then((response) => {
         if (!response.ok) {
+          alert("City not found");
           throw new Error("Error fetching weather data");
         }
         return response.json();
@@ -36,6 +40,10 @@ function App() {
         console.error("Error fetching weather data:", error);
       });
   };
+  const reset = () => {
+    setData(false); // Clear weather data
+    inputRef.current.value = ''; // Clear input field
+}
   // Memoize the background image computation to avoid unnecessary recalculations
   const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
