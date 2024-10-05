@@ -6,7 +6,7 @@ import clouds from './assets/clouds.jpg';
 import rain from './assets/rainy.jpg';
 import thunderstorm from './assets/thunderstorm.jpg';
 import defau from './assets/default.jpg'; 
-import Snowy from './assets/snowy.jpg';
+import Snowy from './assets/Snowy.jpg';
 import fog from './assets/fog.jpg';
 //preloding images
 const preloadImages = [clear, clouds, rain, thunderstorm, defau, Snowy, fog].forEach(src => {
