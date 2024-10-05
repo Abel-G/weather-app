@@ -26,15 +26,15 @@ function WeatherCard({ data }) {
       {data.name !== undefined && (
         <div className='flex justify-between w-full mx-auto px-4 py-4 rounded-2xl bg-white/20 text-center z-10'>
           <div className='feels'>
-            {data.main ? <p className='bold'>{data.main.feels_like.toFixed(1)} °F</p> : null}
+            {data.main ? <p className='desc'>{data.main.feels_like.toFixed(1)} °F</p> : null}
             <p>Feels Like</p>
           </div>
           <div className='humidity'>
-            {data.main ? <p className='bold'>{data.main.humidity}%</p> : null}
+            {data.main ? <p className='desc'>{data.main.humidity}%</p> : null}
             <p>Humidity</p>
           </div>
           <div className='wind'>
-            {data.wind ? <p className='bold'>{data.wind.speed.toFixed()} MPH</p> : null}
+            {data.wind ? <p className='desc'>{data.wind.speed.toFixed()} MPH</p> : null}
             <p>Wind Speed</p>
           </div>
         </div>

@@ -26,7 +26,7 @@ function SearchBar({ onSearch }) {
           onKeyDown={handleKeyDown}
           placeholder='Enter Location'
           type='text'
-          className='px-4 py-3 text-lg rounded-full border border-white/80 bg-white/20 text-white focus:outline-none  focus:none'
+          className='px-4 py-3 text-lg rounded-full border border-white/80 bg-white/20 text-white focus:outline-none  focus:none ::placeholder {color: white;}'
         />
         <img 
           src={search}

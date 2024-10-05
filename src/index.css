@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
@@ -16,4 +17,8 @@
   position: relative;
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
+}
+
+.desc {
+  @apply text-3xl
 }
