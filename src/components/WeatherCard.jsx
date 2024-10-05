@@ -2,17 +2,17 @@ import React from 'react'
 
 function WeatherCard({ data }) {
   return (
-    <div className='max-w-3xl mx-auto px-4 pt-10 relative flex  gap-10 justify-between overflow-hidden' >
-      <div className='w-full mx-auto bg-white/20 px-4 py-0 rounded-2xl flex justify-between'>
+    <div className='max-w-5xl mx-auto px-4 pt-10 relative flex  gap-10 justify-between overflow-hidden' >
+      <div className='w-full mx-auto bg-white/20 px-4 pb-6 rounded-2xl flex justify-between'>
         <div>
           <div className='location'>
-            <p className='text-3xl'>{data.name}</p>
+            <p className='text-3xl py-3'>{data.name}</p>
           </div>
           <div className='temp'>
             {data.main ? <h1 className='text-6xl'>{data.main.temp.toFixed(1)}°C</h1> : null}
           </div>
           <div className='position:relative'>
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
+            {data.weather ? <p className='text-3xl py-2'>{data.weather[0].main}</p> : null}
           </div>
         </div>
         {data.weather && (
