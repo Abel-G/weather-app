@@ -8,11 +8,12 @@ import thunderstorm from './assets/thunderstorm.jpg';
 import defau from './assets/default.jpg'; 
 import Snowy from './assets/snowy.jpg';
 import fog from './assets/fog.jpg';
+
 function App() {
   const [data, setData] = useState({});
   
   const fetchWeatherData = (location) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=3fd63f67d3176fbb124bf3beee18bb35`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${import.meta.env.VITE_API_KEY}`;
 
     fetch(url)
       .then((response) => {
