@@ -5,10 +5,10 @@ import humidity from '../assets/humidity.png'
 function WeatherCard({ data }) {
   return (
     <div className='max-w-5xl mx-auto px-4 pt-10 relative flex  gap-10 justify-between overflow-hidden' >
-      <div className='w-full mx-auto bg-white/20 px-4 pb-6 rounded-2xl flex justify-between'>
+      <div className='w-full mx-auto bg-white/20 px-4  rounded-2xl flex justify-between'>
         <div>
           <div className='location'>
-            <p className='text-3xl p-3'>{data.name}</p>
+            <p className='text-3xl'>{data.name}</p>
           </div>
           <div className='temp'>
             {data.main ? <h1 className='text-6xl'>{data.main.temp.toFixed(1)}°C</h1> : null}

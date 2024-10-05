@@ -13,6 +13,7 @@ function App() {
   const [data, setData] = useState({});
   
   const fetchWeatherData = (location) => {
+     ;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${import.meta.env.VITE_API_KEY}`;
 
     fetch(url)
