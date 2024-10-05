@@ -3,6 +3,21 @@ import thermometer from '../assets/thermometer.png'
 import wind from '../assets/wind.png'
 import humidity from '../assets/humidity.png'
 
+/**
+ * WeatherCard displays the weather information for a given location.
+ * It takes a data prop which must include the following properties:
+ * - name: the name of the location
+ * - main: an object with the following properties:
+ *   - temp: the current temperature in degrees Celsius
+ *   - feels_like: the feels like temperature in degrees Celsius
+ *   - humidity: the humidity in percentage
+ * - weather: an array with one object with the following properties:
+ *   - main: the main weather condition
+ *   - icon: the icon corresponding to the weather condition
+ * - wind: an object with the following properties:
+ *   - speed: the wind speed in miles per hour
+ * If any of the properties are missing, WeatherCard will not display that information.
+ */
 function WeatherCard({ data }) {
   
   return (

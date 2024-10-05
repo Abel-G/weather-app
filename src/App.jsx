@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo} from 'react';
 import SearchBar from './components/SearchBar';
 import WeatherCard from './components/WeatherCard';
 import clear from './assets/clear.jpg';
-import clouds from './assets/Clouds.jpg';
+import clouds from './assets/clouds.jpg';
 import rain from './assets/rainy.jpg';
 import thunderstorm from './assets/thunderstorm.jpg';
 import defau from './assets/default.jpg'; 
@@ -58,6 +58,7 @@ function App() {
     setData(false); // Clear weather data
     inputRef.current.value = ''; // Clear input field
 }
+
   // Memoize the background image computation to avoid unnecessary recalculations
   const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
