@@ -22,8 +22,9 @@ function SearchBar({ onSearch }) {
   };
   return (
     <div className='text-center p-10'>
-      <h1 className='text-3xl font-bold text-center m-0 py-10'>Your Weather Update</h1>
-      <div className="flex items-center justify-center">
+      <h1 className='text-4xl font-bold text-center m-0 py-10'>Weather Updates Tailored for You
+      </h1>
+      <div className="flex items-center justify-center text-gray-400">
           <div className="relative flex items-center">
             <img
               src={search}

@@ -8,7 +8,6 @@ import thunderstorm from './assets/thunderstorm.jpg';
 import defau from './assets/default.jpg'; 
 import Snowy from './assets/snowy.jpg';
 import fog from './assets/fog.jpg';
-
 //preloding images
 const preloadImages = [clear, clouds, rain, thunderstorm, defau, Snowy, fog].forEach(src => {
   const img = new Image();
