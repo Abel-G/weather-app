@@ -1,27 +1,33 @@
 import React from 'react'
 
-function WeatherCard() {
+function WeatherCard({ data }) {
   return (
-    <div>
-      <div>
-        <img src="" alt="" />
-        <div>
-          <h1>16°</h1>
-        </div>
-        <div> 
-          <h3>Sunny</h3>
-        </div>
+    <div className=''>
+      <div className='flex flex-col'>
+          {data.weather && (
+              <img
+                src={`/icons/${data.weather[0].icon}.png`}
+                alt="Weather Icon"
+                className='icon w-10'
+              />
+            )}
+          <div>
+            {data.main ? <h1>{data.main.temp}°C</h1> : null}
+          </div>
+          <div> 
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
+          </div>
       </div>    
-      <div>
+      <div className='flex'>
         <div>
           <div>
-            <h1>London</h1>
+            <h1>{data.name}</h1>
           </div>
           <div>
             <h3>Monday, 20 January</h3> 
           </div>
         </div>
-        <div>
+        <div className=''>
           <div>
             <h3>Feels Like</h3>
             <h3>16°</h3>

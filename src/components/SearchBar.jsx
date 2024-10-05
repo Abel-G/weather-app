@@ -16,21 +16,22 @@ function SearchBar({ onSearch }) {
     setLocation(''); 
   };
   return (
-    <div>
-      <h1>Weather Update</h1>
-      <div>
+    <div >
+      <h1 className='text-3xl font-bold text-center m-0 py-10'>Your Weather Update</h1>
+      <div className='flex flex-row justify-center items-center m-0'>
         <input 
-        ref={inputRef}
-        value={location}
-        onChange={(event) => setLocation(event.target.value)}
-        onKeyDown={handleKeyDown}
-        placeholder='Enter Location'
-        type='text'
-        className='outline:none' />
+          ref={inputRef}
+          value={location}
+          onChange={(event) => setLocation(event.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder='Enter Location'
+          type='text'
+          className='px-4 py-3 text-lg rounded-full border border-white/80 bg-white/10 text-gray-500'
+        />
         <img 
           src={search}
           alt="Search"
-          className=' size-10 ml-2'
+          className=' size-10 ml-2 brightness-0 invert'
           onClick={handleIconClick} />
       </div>
     </div>
