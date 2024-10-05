@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo} from 'react';
 import SearchBar from './components/SearchBar';
 import WeatherCard from './components/WeatherCard';
 import clear from './assets/clear.jpg';
@@ -9,6 +9,11 @@ import defau from './assets/default.jpg';
 import Snowy from './assets/snowy.jpg';
 import fog from './assets/fog.jpg';
 
+//preloding images
+const preloadImages = [clear, clouds, rain, thunderstorm, defau, Snowy, fog].forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
 function App() {
   const [data, setData] = useState({});
   
@@ -31,7 +36,8 @@ function App() {
         console.error("Error fetching weather data:", error);
       });
   };
-  const getBackgroundImage = () => {
+  // Memoize the background image computation to avoid unnecessary recalculations
+  const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
     switch (data.weather[0].main) {
       case 'Clouds':
@@ -49,9 +55,9 @@ function App() {
       default:
         return `url(${defau})`;
     }
-  };
+  }, [data.weather]);
   return (
-    <div className='app'style={{ backgroundImage: getBackgroundImage(), backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}>
+    <div className='app'style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <SearchBar onSearch={fetchWeatherData} />
       <WeatherCard data={data} />
     </div>
