@@ -5,7 +5,7 @@ import humidity from '../assets/humidity.png'
 function WeatherCard({ data }) {
   return (
     <div className='max-w-5xl mx-auto px-4 pt-10 relative flex  gap-10 justify-between overflow-hidden' >
-      <div className='w-full mx-auto bg-white/20 px-4  rounded-2xl flex justify-between'>
+      <div className='w-full mx-auto bg-white/40 px-4  rounded-2xl flex justify-between'>
         <div>
           <div className='location'>
             <p className='text-3xl'>{data.name}</p>
@@ -26,7 +26,7 @@ function WeatherCard({ data }) {
         )}
       </div>
       {data.name !== undefined && (
-        <div className='flex justify-between w-full mx-auto px-4 py-4 rounded-2xl bg-white/20 text-center z-10'>
+        <div className='flex justify-between w-full mx-auto px-4 py-4 rounded-2xl bg-white/40 text-center z-10'>
           <div className='feels'>
             <img src={thermometer} alt="thermometer" className='w-10 brightness-0 invert'/>
             <div>

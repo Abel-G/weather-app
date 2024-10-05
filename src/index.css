@@ -17,6 +17,7 @@
   background-image: url(./assets/default.jpg);
   height: 150vh;
   position: relative;
+  background-color: #fff;
   color: #fff;
 }
 
