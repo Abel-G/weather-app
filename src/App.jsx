@@ -84,7 +84,7 @@ function App() {
     <div className='app'style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <SearchBar onSearch={fetchWeatherData} />
       <WeatherCard data={data} />
-      <button className='fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-white/40 text-white py-2 px-4 rounded-full shadow-lg hover:bg-blue-600/20 focus:outline-none' onClick={reset}>Reset</button>
+      <button className='fixed bottom-3 left-1/2 transform -translate-x-1/2 bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={reset}>Reset</button>
     </div>
   );
 }
