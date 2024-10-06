@@ -8,8 +8,8 @@ import thunderstorm from './assets/thunderstorm.jpg';
 import defau from './assets/default.jpg'; 
 import Snowy from './assets/Snowy.jpg';
 import fog from './assets/fog.jpg';
-import ErrorMessage from './components/ErrorMessages';
-import Forecast from './components/Forecast';
+import ErrorMessage  from './components/ErrorMessages';
+import Forecast from './components/Forecast';   
 //preloading images
 const preloadImages = [clear, clouds, rain, thunderstorm, defau, Snowy, fog].forEach(src => {
   const img = new Image();
@@ -101,7 +101,7 @@ function App() {
   }, [data.weather]);
 
   return (
-    <div className='app' style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+    <div className='app ' style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
       <SearchBar onSearch={fetchWeatherData} inputRef={inputRef} />
       <WeatherCard data={data} />
       <ErrorMessage message={errorMessage} onClose={() => setErrorMessage('')} /> 
