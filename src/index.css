@@ -15,10 +15,21 @@
 .app{
   width: 100%;
   background-image: url(./assets/default.jpg);
-  height: 275vh;
+  height: 150vh;
   position: relative;
   background-color: #fff;
   color: #fff;
+}
+@media screen and (max-width: 600px) {
+  .app{
+    width: 100%;
+    background-image: url(./assets/default.jpg);
+    height: 300vh;
+    position: relative;
+    background-color: #fff;
+    color: #fff;
+  }
+  
 }
 
 .desc {
