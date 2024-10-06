@@ -50,7 +50,7 @@ const resetForecast = () => {
    */
   return (
     <div className='forecast-container mt-10 px-2 md:flex md:flex-col'>
-      <h2 className='text-2xl font-bold mb-4'>5-Day Forecast</h2>
+      <h2 className='text-2xl font-bold mb-4 text-center'>5-Day Forecast</h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4'>
         {forecastData.map((forecast, index) => {
           const date = new Date(forecast.dt * 1000);
@@ -59,7 +59,7 @@ const resetForecast = () => {
           const iconUrl = `https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
 
           return (
-            <div key={index} className='forecast-card p-4 bg-white/40 rounded-2xl text-center'>
+            <div key={index} className='forecast-card p-4 bg-white/40 rounded-2xl text-center hover:bg-slate-300/50 hover:text-gray-700'>
               <p className='text-lg font-bold'>{day}</p>
               <img src={iconUrl} alt={forecast.weather[0].description} className='w-16 mx-auto' />
               <p className='text-xl'>{temp}°C</p>
