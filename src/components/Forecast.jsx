@@ -49,7 +49,7 @@ const resetForecast = () => {
    * Renders a forecast card for each day in the forecast data.
    */
   return (
-    <div className='forecast-container mt-10 px-2 md:flex md:flex-col'>
+    <div className='forecast-container mt-10 px-2 md:flex md:flex-col sm:grid sm:grid-cols-1 sm:gap-4'>
       <h2 className='text-2xl font-bold mb-4'>5-Day Forecast</h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4'>
         {forecastData.map((forecast, index) => {

@@ -9,6 +9,7 @@ import defau from './assets/default.jpg';
 import Snowy from './assets/Snowy.jpg';
 import fog from './assets/fog.jpg';
 import ErrorMessage from './components/ErrorMessages';
+import Forecast from './components/Forecast';
 //preloading images
 const preloadImages = [clear, clouds, rain, thunderstorm, defau, Snowy, fog].forEach(src => {
   const img = new Image();
@@ -61,9 +62,10 @@ function App() {
    * Used to provide a "Reset" button.
    */
   const reset = () => {
-    setData(false); // Clear weather data
+    setData(false);
+    // Clear weather data
     inputRef.current.value = ''; // Clear input field
-    setErrorMessage(''); // Clear error message on reset
+    
   };
 
   /**
@@ -103,6 +105,7 @@ function App() {
       <SearchBar onSearch={fetchWeatherData} inputRef={inputRef} />
       <WeatherCard data={data} />
       <ErrorMessage message={errorMessage} onClose={() => setErrorMessage('')} /> 
+      {data.name && <Forecast location={data.name} />} {/* Only render if we have a valid location */}
       <div className="button-group fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-4">
         <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={reset}>Reset</button>
         <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={refreshWeather}>Refresh</button>
