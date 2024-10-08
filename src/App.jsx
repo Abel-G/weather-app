@@ -82,23 +82,35 @@ function App() {
   // Memoize the background image computation to avoid unnecessary recalculations
   const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
-    switch (data.weather[0].main) {
-      case 'Clouds':
-        return `url(${clouds})`;
-      case 'Clear':
-        return `url(${clear})`;
-      case 'Rain':
-        return `url(${rain})`;
-      case 'Snow':
-        return `url(${Snowy})`;
-      case 'Thunderstorm':
-        return `url(${thunderstorm})`;
-      case 'Fog':
-        return `url(${fog})`;
-      default:
-        return `url(${defau})`;
-    }
+    // switch (data.weather[0].main) {
+    //   case 'Clouds':
+    //     return `url(${clouds})`;
+    //   case 'Clear':
+    //     return `url(${clear})`;
+    //   case 'Rain':
+    //     return `url(${rain})`;
+    //   case 'Snow':
+    //     return `url(${Snowy})`;
+    //   case 'Thunderstorm':
+    //     return `url(${thunderstorm})`;
+    //   case 'Fog':
+    //     return `url(${fog})`;
+    //   default:
+    //     return `url(${defau})`;
+        const weatherImages = {
+            Clouds: `url(${clouds})`,
+            Clear: `url(${clear})`,
+            Rain: `url(${rain})`,
+            Snow: `url(${Snowy})`,
+            Thunderstorm: `url(${thunderstorm})`,
+            Fog: `url(${fog})`,
+            default: `url(${defau})`,
+          };     
+            return data.weather.map((item) => weatherImages[item.main] || weatherImages.default);
+        
   }, [data.weather]);
+//  
+
 
   return (
     <div className='app ' style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
