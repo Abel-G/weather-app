@@ -21,7 +21,7 @@ import humidity from '../assets/humidity.png'
 function WeatherCard({ data }) {
   
   return (
-    <div className='max-w-5xl mx-auto px-4 pt-10 relative flex lg:flex-row flex-col md:flex-col gap-10 justify-between overflow-hidden ' >
+    <div className='max-w-5xl mx-auto px-4  relative flex lg:flex-row flex-col md:flex-col gap-10 justify-between overflow-hidden ' >
       <div className='w-full mx-auto bg-white/40 px-4  rounded-2xl flex justify-between  hover:bg-slate-300/50 hover:text-gray-700'>
         <div>
           <div className='location'>

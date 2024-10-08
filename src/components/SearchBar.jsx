@@ -39,7 +39,7 @@ function SearchBar({ onSearch }) {
               onKeyDown={handleKeyDown}
               placeholder="Enter Location"
               type="text"
-              className="pl-10 pr-4 py-3 text-lg rounded-full border border-white/80 bg-white/20 text-white focus:outline-none focus:none placeholder-white"
+              className="pl-10 pr-4 py-3 text-lg rounded-full border border-white/80 bg-white/20 text-white  placeholder-white"
             />
           </div>
         </div>
