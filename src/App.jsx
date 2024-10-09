@@ -113,14 +113,17 @@ function App() {
 
 
   return (
-    <div className='app ' style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
-      <SearchBar onSearch={fetchWeatherData} inputRef={inputRef} />
-      <WeatherCard data={data} />
-      <ErrorMessage message={errorMessage} onClose={() => setErrorMessage('')} /> 
-      {data.name && <Forecast location={data.name} />} {/* Only render if we have a valid location */}
-      <div className="button-group fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-4">
-        <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={reset}>Reset</button>
-        <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={refreshWeather}>Refresh</button>
+    <div className='app' style={{ backgroundImage: getBackgroundImage, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      <div className='relative z-10'>
+        <SearchBar onSearch={fetchWeatherData} inputRef={inputRef} />
+        <WeatherCard data={data} />
+        <ErrorMessage message={errorMessage} onClose={() => setErrorMessage('')} /> 
+        {data.name && <Forecast location={data.name} />} {/* Only render if we have a valid location */}
+        <div className="button-group fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-4">
+          <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={reset}>Reset</button>
+          <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={refreshWeather}>Refresh</button>
+        </div>
       </div>
     </div>
   );
