@@ -19,7 +19,7 @@ import humidity from '../assets/humidity.png'
  * If any of the properties are missing, WeatherCard will not display that information.
  */
 function WeatherCard({ data }) {
-  
+  //const icon = `https://openweathermap.org/img/wn/${data?.weather?.[0]?.icon}@2x.png`
   return (
     <div className='max-w-5xl mx-auto px-4  relative flex lg:flex-row flex-col md:flex-col gap-10 justify-between overflow-hidden ' >
       <div className='w-full mx-auto bg-white/40 px-4  rounded-2xl flex justify-between  hover:bg-slate-300/50 hover:text-gray-700'>
@@ -38,7 +38,7 @@ function WeatherCard({ data }) {
           <img
             src={`/icons/${data.weather[0].icon}.png`}
             alt="Weather Icon"
-            className='icon w-150 '
+            className='icon '
           />
         )}
       </div>

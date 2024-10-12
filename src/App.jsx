@@ -82,21 +82,7 @@ function App() {
   // Memoize the background image computation to avoid unnecessary recalculations
   const getBackgroundImage = useMemo(() => {
     if (!data.weather) return '';
-    // switch (data.weather[0].main) {
-    //   case 'Clouds':
-    //     return `url(${clouds})`;
-    //   case 'Clear':
-    //     return `url(${clear})`;
-    //   case 'Rain':
-    //     return `url(${rain})`;
-    //   case 'Snow':
-    //     return `url(${Snowy})`;
-    //   case 'Thunderstorm':
-    //     return `url(${thunderstorm})`;
-    //   case 'Fog':
-    //     return `url(${fog})`;
-    //   default:
-    //     return `url(${defau})`;
+  
         const weatherImages = {
             Clouds: `url(${clouds})`,
             Clear: `url(${clear})`,
@@ -120,9 +106,10 @@ function App() {
         <WeatherCard data={data} />
         <ErrorMessage message={errorMessage} onClose={() => setErrorMessage('')} /> 
         {data.name && <Forecast location={data.name} />} {/* Only render if we have a valid location */}
-        <div className="button-group fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <div className="button-group fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-4 items-center">
           <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={reset}>Reset</button>
           <button className='bg-white/60 text-gray-800 py-1 px-6 rounded-full shadow-lg hover:bg-gray-600/30 hover:text-white focus:outline-none' onClick={refreshWeather}>Refresh</button>
+          <p className='text-sm ml-auto'>© 2024 By <a href='https://github.com/Abel-G' className='hover:text-red-400'>Abel-G</a></p>
         </div>
       </div>
     </div>
